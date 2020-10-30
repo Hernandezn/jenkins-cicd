@@ -10,30 +10,30 @@ import com.reimbursement.controller.ViewController;
 public class ReturnDataSelector {
 	
 	public void getJsonData(HttpServletRequest req, HttpServletResponse res) {
-		String jsonURI = req.getRequestURI();
+		String jsonPath = req.getRequestURI();
+		jsonPath = jsonPath.substring(jsonPath.lastIndexOf('/'));
 		
-		
-//		System.out.println(jsonURI);
+//		System.out.println(jsonPath);
 		
 //		System.out.println(req.getSession().getAttribute("warning-message"));
 		
-		switch(jsonURI) {
-		case "/Reimbursement/warn.json":
+		switch(jsonPath) {
+		case "/warn.json":
 			new OutboundDataController().loginWarningStatus(req, res);
 			break;
-		case "/Reimbursement/user.json":
+		case "/user.json":
 			new OutboundDataController().currentUser(req, res);
 			break;
-		case "/Reimbursement/records.json":
+		case "/records.json":
 			new OutboundDataController().records(req, res);
 			break;
-		case "/Reimbursement/record.json":
+		case "/record.json":
 			new InboundDataController().newRecord(req, res);
 			break;
-		case "/Reimbursement/approve.json":
+		case "/approve.json":
 			new InboundDataController().approveRecord(req, res);
 			break;
-		case "/Reimbursement/deny.json":
+		case "/deny.json":
 			new InboundDataController().denyRecord(req, res);
 			break;
 		}
@@ -41,11 +41,17 @@ public class ReturnDataSelector {
 	
 	public String getPageData(HttpServletRequest req) {
 		String s = req.getRequestURI();
+		s = s.substring(s.lastIndexOf('/'));
+		
+//		System.out.println(s);
+		
+		if(s == null)
+			return "frontend/html/index.html";
 		
 		switch (s) {
-		case "/Reimbursement/login.page":
+		case "/login.page":
 			return new ViewController().attemptLogin(req);
-		case "/Reimbursement/reimbursements.page":
+		case "/reimbursements.page":
 			if(req.getSession().getAttribute("user") != null) {
 				return "frontend/html/viewer.html";
 			}
