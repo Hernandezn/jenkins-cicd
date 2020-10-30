@@ -30,7 +30,8 @@ public class WebpageServlet extends HttpServlet {
 		
 		if(targetPage.equals("LOGIN")) {
 //			System.out.println("Logged in!");
-			response.sendRedirect("/Reimbursement/reimbursements.page");
+			String url = request.getRequestURL().toString();
+			response.sendRedirect(url.substring( 0, url.lastIndexOf('/')) + "/reimbursements.page");
 		} else {
 			request.getRequestDispatcher(targetPage).forward(request, response);
 		}
