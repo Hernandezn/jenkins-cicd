@@ -99,7 +99,7 @@
 				expression(json);
 			}
 			asyncFetch(
-				"/warn.json",
+				(window.location.pathname + "/warn.json"),
 				showWarnings
 			)
 		</script>

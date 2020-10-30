@@ -88,7 +88,7 @@
 				isManager = (userDTO.roleId == 1);
 
 				asyncFetch(
-					"/records.json",
+					(window.location.pathname + "/records.json"),
 					populateTable
 				);
 			}
@@ -249,7 +249,7 @@
 				document.getElementById("new-description").value = "";
 				document.getElementById("new-type").value = "0";
 
-				const response = await fetch("/record.json", {
+				const response = await fetch( (window.location.pathname + "/record.json"), {
 					method: 'post',
 					body:	JSON.stringify(record)
 				});
@@ -311,7 +311,7 @@
 
 				console.log("Accepted reimbursement number " + reimbId);
 
-				const response = await fetch("/approve.json", {
+				const response = await fetch( (window.location.pathname + "/approve.json"), {
 					method: 'post',
 					body:	reimbId
 				});
@@ -333,7 +333,7 @@
 
 				console.log("Denied reimbursement number " + reimbId);
 
-				const response = await fetch("/deny.json", {
+				const response = await fetch( (window.location.pathname + "/deny.json"), {
 					method: 'post',
 					body:	reimbId
 				});
@@ -358,7 +358,7 @@
 
 			// Initial execution
 			asyncFetch(
-				"/user.json",
+				(window.location.pathname + "/user.json"),
 				populateLoggedInUser
 			);
 		</script>
