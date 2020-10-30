@@ -39,6 +39,8 @@ public class InboundDataController {
 		try {
 			newRecord = new ObjectMapper().readValue(req.getInputStream(), RecordDTO.class);
 			
+			
+			
 			if(newRecord.getAmount().isEmpty() || newRecord.getAmount().charAt(0) == '-'
 					|| newRecord.getAmount().charAt(0) == '0')
 				return;
@@ -48,6 +50,8 @@ public class InboundDataController {
 			newRecord = recsvc.save(newRecord, user);
 			
 			String str = new ObjectMapper().writeValueAsString(newRecord);
+			
+//			System.out.println(str);
 			
 			res.getWriter().println(str);
 		} catch(IOException e) {

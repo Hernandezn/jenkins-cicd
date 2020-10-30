@@ -32,7 +32,10 @@ public class RecordService {
 		
 		List<RecordDTO> records = getRecordsFor(user);
 		
-		return records.get(records.size() - 1);
+//		for(RecordDTO record: records)
+//			System.out.println(record.toString());
+		
+		return records.get(0);
 	}
 	
 	public RecordDTO constructResolvedRecord(Reimbursement reimb, User resolver) {

@@ -1,5 +1,7 @@
 package com.reimbursement.model;
 
+import java.util.Arrays;
+
 public class RecordDTO {
 	private int id;
 	private String amount;
@@ -104,5 +106,11 @@ public class RecordDTO {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+	@Override
+	public String toString() {
+		return "RecordDTO [id=" + id + ", amount=" + amount + ", submitted=" + submitted + ", resolved=" + resolved
+				+ ", description=" + description + ", receipt=" + Arrays.toString(receipt) + ", requestor=" + requestor
+				+ ", resolver=" + resolver + ", status=" + status + ", type=" + type + "]";
 	}
 }
