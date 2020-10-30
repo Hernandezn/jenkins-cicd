@@ -32,13 +32,13 @@ import com.reimbursement.util.DBConnector;
 				
 <span class="fc" id="L33">				record.setId(rs.getInt(&quot;id&quot;));</span>
 <span class="fc" id="L34">				record.setAmount(rs.getBigDecimal(&quot;amount&quot;).toPlainString());</span>
-<span class="pc bpc" id="L35" title="2 of 4 branches missed.">				switch(rs.getInt(&quot;reimb_status_id&quot;)) {</span>
+<span class="pc bpc" id="L35" title="1 of 4 branches missed.">				switch(rs.getInt(&quot;reimb_status_id&quot;)) {</span>
 				case 0:	
 <span class="fc" id="L37">					record.setStatus(&quot;PENDING&quot;);</span>
 <span class="fc" id="L38">					break;</span>
 				case 1:
-<span class="nc" id="L40">					record.setStatus(&quot;APPROVED&quot;);</span>
-<span class="nc" id="L41">					break;</span>
+<span class="fc" id="L40">					record.setStatus(&quot;APPROVED&quot;);</span>
+<span class="fc" id="L41">					break;</span>
 				case 2:
 <span class="fc" id="L43">					record.setStatus(&quot;REJECTED&quot;);</span>
 				}
@@ -46,16 +46,16 @@ import com.reimbursement.util.DBConnector;
 <span class="fc bfc" id="L46" title="All 2 branches covered.">				record.setResolved(rs.getTimestamp(&quot;resolved&quot;) == null ?</span>
 <span class="fc" id="L47">						&quot;UNRESOLVED&quot; : rs.getTimestamp(&quot;resolved&quot;).toString());</span>
 <span class="fc" id="L48">				record.setDescription(rs.getString(&quot;description&quot;));</span>
-<span class="pc bpc" id="L49" title="4 of 6 branches missed.">				switch(rs.getInt(&quot;reimb_type_id&quot;)) {</span>
+<span class="pc bpc" id="L49" title="2 of 6 branches missed.">				switch(rs.getInt(&quot;reimb_type_id&quot;)) {</span>
 				case 0:
 <span class="fc" id="L51">					record.setType(&quot;training&quot;);</span>
 <span class="fc" id="L52">					break;</span>
 				case 1:
-<span class="nc" id="L54">					record.setType(&quot;travel&quot;);</span>
-<span class="nc" id="L55">					break;</span>
+<span class="fc" id="L54">					record.setType(&quot;travel&quot;);</span>
+<span class="fc" id="L55">					break;</span>
 				case 2:
-<span class="nc" id="L57">					record.setType(&quot;supplies&quot;);</span>
-<span class="nc" id="L58">					break;</span>
+<span class="fc" id="L57">					record.setType(&quot;supplies&quot;);</span>
+<span class="fc" id="L58">					break;</span>
 				case 3:
 <span class="fc" id="L60">					record.setType(&quot;safety&quot;);</span>
 <span class="fc" id="L61">					break;</span>

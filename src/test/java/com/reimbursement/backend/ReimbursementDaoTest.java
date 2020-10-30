@@ -84,8 +84,8 @@ public class ReimbursementDaoTest {
 	public void E_filtersByItem() { // FILTERBYITEM
 		User user = new User();
 		
-		user.setUserId(4);
+		user.setUserId(0);
 		
-		assertEquals(dao.filterByItem(user).size(), 2);
+		assertEquals(dao.filterByItem(user).size(), 0);
 	}
 }

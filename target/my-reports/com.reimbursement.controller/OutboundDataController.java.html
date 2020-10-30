@@ -32,7 +32,7 @@ public class OutboundDataController {
 <span class="nc" id="L32">			String str = new ObjectMapper().writeValueAsString(</span>
 <span class="nc" id="L33">					req.getSession().getAttribute(&quot;warning-message&quot;));</span>
 			
-<span class="nc bnc" id="L35" title="All 2 branches missed.">			if(str.equals(&quot;null&quot;))</span>
+<span class="nc bnc" id="L35" title="All 4 branches missed.">			if(str.equals(&quot;null&quot;) || str == null)</span>
 <span class="nc" id="L36">				str = new ObjectMapper().writeValueAsString(&quot;&quot;);</span>
 			
 //			System.out.println(str);
