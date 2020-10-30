@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="com.reimbursement.backend.ReimbursementTypeDaoTest" time="2.718" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="com.reimbursement.backend.ReimbursementTypeDaoTest" time="2.747" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_271\jre\bin"/>
@@ -63,9 +63,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.reimbursement.backend.ReimbursementTypeDaoTest" name="A_readsAllRecords" time="0.243"/>
-  <testcase classname="com.reimbursement.backend.ReimbursementTypeDaoTest" name="B_findsRecordById" time="0.239"/>
-  <testcase classname="com.reimbursement.backend.ReimbursementTypeDaoTest" name="C_crudOps" time="1.99"/>
+  <testcase classname="com.reimbursement.backend.ReimbursementTypeDaoTest" name="A_readsAllRecords" time="0.245"/>
+  <testcase classname="com.reimbursement.backend.ReimbursementTypeDaoTest" name="B_findsRecordById" time="0.304"/>
+  <testcase classname="com.reimbursement.backend.ReimbursementTypeDaoTest" name="C_crudOps" time="1.952"/>
   <testcase classname="com.reimbursement.backend.ReimbursementTypeDaoTest" name="D_findsRecordState" time="0.246"/>
   <testcase classname="com.reimbursement.backend.ReimbursementTypeDaoTest" name="E_filtersByItem" time="0"/>
 </testsuite>

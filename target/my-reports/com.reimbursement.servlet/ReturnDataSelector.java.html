@@ -10,30 +10,30 @@ import com.reimbursement.controller.ViewController;
 <span class="nc" id="L10">public class ReturnDataSelector {</span>
 	
 	public void getJsonData(HttpServletRequest req, HttpServletResponse res) {
-<span class="nc" id="L13">		String jsonURI = req.getRequestURI();</span>
+<span class="nc" id="L13">		String jsonPath = req.getRequestURI();</span>
+<span class="nc" id="L14">		jsonPath = jsonPath.substring(jsonPath.lastIndexOf('/'));</span>
 		
-		
-//		System.out.println(jsonURI);
+//		System.out.println(jsonPath);
 		
 //		System.out.println(req.getSession().getAttribute(&quot;warning-message&quot;));
 		
-<span class="nc bnc" id="L20" title="All 7 branches missed.">		switch(jsonURI) {</span>
-		case &quot;/Reimbursement/warn.json&quot;:
+<span class="nc bnc" id="L20" title="All 7 branches missed.">		switch(jsonPath) {</span>
+		case &quot;/warn.json&quot;:
 <span class="nc" id="L22">			new OutboundDataController().loginWarningStatus(req, res);</span>
 <span class="nc" id="L23">			break;</span>
-		case &quot;/Reimbursement/user.json&quot;:
+		case &quot;/user.json&quot;:
 <span class="nc" id="L25">			new OutboundDataController().currentUser(req, res);</span>
 <span class="nc" id="L26">			break;</span>
-		case &quot;/Reimbursement/records.json&quot;:
+		case &quot;/records.json&quot;:
 <span class="nc" id="L28">			new OutboundDataController().records(req, res);</span>
 <span class="nc" id="L29">			break;</span>
-		case &quot;/Reimbursement/record.json&quot;:
+		case &quot;/record.json&quot;:
 <span class="nc" id="L31">			new InboundDataController().newRecord(req, res);</span>
 <span class="nc" id="L32">			break;</span>
-		case &quot;/Reimbursement/approve.json&quot;:
+		case &quot;/approve.json&quot;:
 <span class="nc" id="L34">			new InboundDataController().approveRecord(req, res);</span>
 <span class="nc" id="L35">			break;</span>
-		case &quot;/Reimbursement/deny.json&quot;:
+		case &quot;/deny.json&quot;:
 <span class="nc" id="L37">			new InboundDataController().denyRecord(req, res);</span>
 			break;
 		}
@@ -41,16 +41,22 @@ import com.reimbursement.controller.ViewController;
 	
 	public String getPageData(HttpServletRequest req) {
 <span class="nc" id="L43">		String s = req.getRequestURI();</span>
+<span class="nc" id="L44">		s = s.substring(s.lastIndexOf('/'));</span>
 		
-<span class="nc bnc" id="L45" title="All 10 branches missed.">		switch (s) {</span>
-		case &quot;/Reimbursement/login.page&quot;:
-<span class="nc" id="L47">			return new ViewController().attemptLogin(req);</span>
-		case &quot;/Reimbursement/reimbursements.page&quot;:
-<span class="nc bnc" id="L49" title="All 2 branches missed.">			if(req.getSession().getAttribute(&quot;user&quot;) != null) {</span>
-<span class="nc" id="L50">				return &quot;frontend/html/viewer.html&quot;;</span>
+//		System.out.println(s);
+		
+<span class="nc bnc" id="L48" title="All 2 branches missed.">		if(s == null)</span>
+<span class="nc" id="L49">			return &quot;frontend/html/index.html&quot;;</span>
+		
+<span class="nc bnc" id="L51" title="All 10 branches missed.">		switch (s) {</span>
+		case &quot;/login.page&quot;:
+<span class="nc" id="L53">			return new ViewController().attemptLogin(req);</span>
+		case &quot;/reimbursements.page&quot;:
+<span class="nc bnc" id="L55" title="All 2 branches missed.">			if(req.getSession().getAttribute(&quot;user&quot;) != null) {</span>
+<span class="nc" id="L56">				return &quot;frontend/html/viewer.html&quot;;</span>
 			}
 		default:
-<span class="nc" id="L53">			return &quot;frontend/html/index.html&quot;;</span>
+<span class="nc" id="L59">			return &quot;frontend/html/index.html&quot;;</span>
 		}
 	}
 }
