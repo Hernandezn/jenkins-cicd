@@ -7,7 +7,7 @@ Full-stack Web development project made in 2 weeks from technologies that I star
   Used to host the relational database that holds user & reimbursement data.
 - **PostgreSQL**
   
-  Database management system and superset of SQL scripting languages. Accessed at developer-side using **DBeaver**.
+  Database management system and dialect of SQL scripting languages. Includes procedural programming via **PL/pgSQL**. Accessed at developer-side using **DBeaver**.
 - **JDBC**
   
   Java's back-end database connection and data retrieval API.
@@ -32,5 +32,14 @@ Full-stack Web development project made in 2 weeks from technologies that I star
 - **Jenkins**
   
   Server deployment automation software. Installed onto the Amazon EC2 within its Tomcat runtime in order to build, test and deploy the Web application. I also configured a Github webhook to allow the server to automatically pull in updates whenever they are pushed to this repository.
+- **HTML/CSS**
+
+  Standard front-end Web development markup with custom styling.
+- **Bootstrap**
+  
+  Powerful CSS library for clean, classification-managed front-end formatting.
+- **JavaScript**
+  
+  Front-end scripting used for immediate front-end feedback, custom generation of tables, AJAX data retrieval, and management of custom-populated UI elements.
 
 Project was commissioned as a paid assignment by Revature, LLC.
