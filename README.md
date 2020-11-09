@@ -40,6 +40,6 @@ Full-stack Web development project made in 2 weeks from technologies that I star
   Powerful CSS library for clean, classification-managed front-end formatting.
 - **JavaScript**
   
-  Front-end scripting used for immediate front-end feedback, custom generation of tables, AJAX data retrieval, and management of custom-populated UI elements.
+  Front-end scripting used for immediate front-end feedback/event handling, custom generation of tables, AJAX/promise data retrieval, and management of custom-populated UI elements via DOM manipulation.
 
 Project was commissioned as a paid assignment by Revature, LLC.
