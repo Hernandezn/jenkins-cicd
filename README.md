@@ -1,6 +1,8 @@
 # Reimbursement Project
 
-Full-stack Web development project made in 2 weeks from technologies that I started off unfamiliar with. Technologies used, from backend to frontend:
+Full-stack Web development project made in 2 weeks from technologies that I started off unfamiliar with. Allows employee & manager users to log in and manage reimbursement tickets.
+
+## Technologies used, from backend to frontend
 
 - **Amazon AWS RDS**
   
@@ -41,5 +43,15 @@ Full-stack Web development project made in 2 weeks from technologies that I star
 - **JavaScript**
   
   Front-end scripting used for immediate front-end feedback/event handling, custom generation of tables, AJAX/promise data retrieval, and management of custom-populated UI elements via DOM manipulation.
+
+## Features
+
+- **Employee Users**
+  
+  An employee user can log in, add a new reimbursement request, check his or her current reimbursement statuses, and log out using clean, simple, self-explanatory buttons & interfaces.
+  
+- **Finance Manager Users**
+  
+  A finance manager can log in as normal, view all reimbursement requests for every user, accept & reject reimbursement requests, and log out using a clean, intuitive UI.
 
 Project was commissioned as a paid assignment by Revature, LLC.
