@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
 
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
@@ -19,7 +19,7 @@ import com.reimbursement.model.User;
 public class ReimbursementDaoTest {
 	ReimbursementDAO dao;
 	
-	@Before
+	@BeforeClass
 	public void init() {
 		dao = new ReimbursementDAO();
 	}
