@@ -28,7 +28,7 @@ public class ReimbursementDaoTest {
 	public void A_readsAllRecords() { // FINDALL
 		List<Reimbursement> reimbs = dao.findAll();
 		
-		assertEquals(reimbs.get(0).getDescription(), "test entry");
+		assertEquals("test entry", reimbs.get(0).getDescription());
 	}
 	
 	@Test

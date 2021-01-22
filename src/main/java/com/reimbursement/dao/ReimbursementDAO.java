@@ -48,7 +48,7 @@ public class ReimbursementDAO implements DBAccessor<Reimbursement, Integer> {
 	@Override
 	public List<Reimbursement> findAll() {
 		List<Reimbursement> reimbursements = new LinkedList<>();
-		String sql = "SELECT * FROM reimbursement_schema.ers_reimbursement";
+		String sql = "SELECT * FROM reimbursement_schema.ers_reimbursement ORDER BY reimb_id";
 		
 		try(Connection conn = DBConnector.getInstance().getConnection()){
 			PreparedStatement ps = conn.prepareStatement(sql);
